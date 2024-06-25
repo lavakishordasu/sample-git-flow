@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Resource</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static', filename='home.css')}}" type="text/css">
+</head>
+<body>
+    <div class="container">
+      
+        <div class="table-responsive-lg caption-top">
+            <caption><h3>ADD NEW EMPLOYEES</h3></caption>
+            <hr>
+            <form class="p-3" action="/add_resource" method="POST">
+                <div class="mb-2">
+                    <label for="emp_id" class="form-label">EMP ID</label>
+                    <input type="text" class="form-control" id="emp_id" name="emp_id" required>
+                </div>
+                <div class="mb-2">
+                    <label for="employee_name" class="form-label">Employee Name</label>
+                    <input type="text" class="form-control" id="employee_name" name="employee_name" required>
+                </div>
+                <div class="mb-2">
+                    <label for="email_id" class="form-label">Email ID</label>
+                    <input type="email" class="form-control" id="email_id" name="email_id">
+                </div>
+                <div class="mb-2">
+                    <label for="hiring_manager_id" class="form-label">Hiring Manager</label>
+                    <select id="hiring_manager_id" name="hiring_manager_id" class="form-control">
+                        {% for manager in managers %}
+                            <option value="{{ manager.id }}">{{ manager.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                
+                <div class="mb-2">
+                    <label for="demand_role" class="form-label">Demand Role</label>
+                    <select id="demand_role" name="demand_role" class="form-control" required>
+                        <option value="QA Engineer">QA Engineer</option>
+                        <option value="SDET - Lead">SDET - Lead</option>
+                        <option value="Product Development">Product Development</option>
+                        <option value="Associate Project Manager">Associate Project Manager</option>
+                        <option value="Azure Data Analyst">Azure Data Analyst</option>
+                    </select>
+                </div>
+
+                <div class="mb-2">
+                    <label for="career_role" class="form-label">Career Role</label>
+                    <select id="career_role" name="career_role" class="form-control" required>
+                        <option value="Admin Lead">Admin Lead</option>
+                        <option value="Admin Manager">Admin Manager</option>
+                        <option value="Analyst PMO">Analyst PMO</option>
+                        <option value="Architect">Architect</option>
+                    </select>
+                </div>
+                
+                <div class="mb-2">
+                    <label for="primary_skills" class="form-label">Primary Skills</label>
+                    <select id="primary_skills" name="primary_skills" class="form-control" required>
+                        <option value="open shift">open shift</option>
+                        <option value=".net">.net</option>
+                        <option value="android">android</option>
+                        <option value="angular">angular</option>
+                        <option value="ansible">ansible</option>
+                        <option value="API">API</option>
+                    </select>
+                </div>
+
+                <div class="mb-2">
+                    <label for="detail_skill" class="form-label">Detail Skill</label>
+                    <input type="text" class="form-control" id="detail_skill" name="detail_skill">
+                </div>
+
+                <div class="mb-2">
+                    <label for="trained_skill" class="form-label">Trained Skill</label>
+                    <input type="text" class="form-control" id="trained_skill" name="trained_skill">
+                </div>
+
+                <div class="mb-2">
+                    <label for="years_of_experience" class="form-label">Years of Experience</label>
+                    <input type="text" class="form-control" id="years_of_experience" name="years_of_experience">
+                </div>
+
+                <div class="mb-2">
+                    <label for="employee_location" class="form-label">Employee Location</label>
+                    <select id="employee_location" name="employee_location" class="form-control">
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Bengaluru">Bengaluru</option>
+                    </select>
+                </div>
+
+                <div class="mb-2">
+                    <label for="service_line" class="form-label">Service Line</label>
+                    <select id="service_line" name="service_line" class="form-control" required>
+                        <option value="Customer Experience">Customer Experience</option>
+                        <option value="Digital And Product Engineering">Digital And Product Engineering</option>
+                        <option value="Data & Analytics">Data & Analytics</option>
+                        <option value="Cloud & Infrastructure">Cloud & Infrastructure</option>
+                    </select>
+                </div>
+
+                <div class="mb-2">
+                    <label for="sub_service_line" class="form-label">Sub Service Line</label>
+                    <select id="sub_service_line" name="sub_service_line" class="form-control" required>
+                        <option value="CX design and strategy">CX design and strategy</option>
+                        <option value="Digital Marketing and Automation">Digital Marketing and Automation</option>
+                        <option value="UI/UX">UI/UX</option>
+                        <option value="Digital Commerce">Digital Commerce</option>
+                        <option value="CRM & Loyalty">CRM & Loyalty</option>
+                        <option value="Application Development">Application Development</option>
+                    </select>
+                </div>
+
+                <div class="mb-2">
+                    <label for="region" class="form-label">Region</label>
+                    <select id="region" name="region" class="form-control" required>
+                        <option value="Europe">Europe</option>
+                        <option value="US">US</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Australia">Australia</option>
+                    </select>
+                </div>
+
+                <div class="mb-2">
+                    <label for="country" class="form-label">Country</label>
+                    <select id="country" name="country" class="form-control" required>
+                        <option value="Belgium">Belgium</option>
+                        <option value="Germany">Germany</option>
+                        <option value="India">India</option>
+                        <option value="Romania">Romania</option>
+                        <option value="France">France</option>
+                        <option value="Italy">Italy</option>
+                        <option value="USA">USA</option>
+                        <option value="New Zealand">New Zealand</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Australia">Australia</option>
+                    </select>
+                </div>
+
+                <div class="mb-2">
+                    <label for="industry_group" class="form-label">Industry Group</label>
+                    <select id="industry_group" name="industry_group" class="form-control" required>
+                        <option value="Banking, Financial Services and Insurance">Banking, Financial Services and Insurance</option>
+                        <option value="Healthcare and Life Science">Healthcare and Life Science</option>
+                        <option value="Consumer and Retail">Consumer and Retail</option>
+                        <option value="Technology, Media and Telecom">Technology, Media and Telecom</option>
+                        <option value="Automotive, Aerospace, Defence, Manufacturing">Automotive, Aerospace, Defence, Manufacturing</option>
+                        <option value="Public">Public</option>
+                        <option value="Cella">Cella</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn text-light m-3" style="background-color:rgb(0, 26, 93);">Add Employee</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="child child6right">
+        <div class="circledivright">
+            <div class="circleright">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</body>
+</html>
