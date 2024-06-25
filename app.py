@@ -194,9 +194,7 @@ def logout():
     # Handle GET request (optional)
     return render_template('home.html')
 
-
-
-    
+# modified
 
 @app.route('/')
 def home():
