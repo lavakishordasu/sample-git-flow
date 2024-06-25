@@ -195,12 +195,7 @@ def logout():
     return render_template('home.html')
 
 
-# @app.route('/logout')
-# def logout():
-#     # Clear the session data
-#     session.clear()
 
-#     return render_template('home.html')
     
 
 @app.route('/')
