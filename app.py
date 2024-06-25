@@ -328,24 +328,6 @@ def add_secondary_info():
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def get_employee_name(employee_id):
     employee = Employee.query.get(employee_id)
     if employee:
