@@ -193,7 +193,7 @@ def logout():
         return render_template('home.html')
     # Handle GET request (optional)
     return render_template('home.html')
-# 
+# added lava
 @app.route('/')
 def home():
     return render_template('home.html')
